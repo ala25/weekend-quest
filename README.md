@@ -9,6 +9,7 @@ From the `quest` folder:
 ```bash
 uv run python quest.py
 ```
+Create a local .env file containing OPENAI_API_KEY=your-key-here. The program selects an activity, then requests a two-sentence briefing from OpenAI. If the request fails, it displays a friendly fallback. A saved example is available in sample_briefing.txt.
 
 ## Example
 
