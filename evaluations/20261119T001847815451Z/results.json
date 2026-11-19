@@ -1,0 +1,3289 @@
+{
+  "model": "gpt-4.1-mini",
+  "prompts": {
+    "A": "Return only JSON with \"title\", \"steps\" (exactly three items), and \"deadline\" (null if none is mentioned). Use these notes: {notes}",
+    "B": "Turn the notes into a brief with a title, exactly three suggested steps, and a deadline.\nPreserve the user's intent and restrictions.\nFollow corrections and do not repeat completed tasks.\nUse null for the deadline when none is stated. A duration is not a deadline.\nNotes: {notes}"
+  },
+  "results": [
+    {
+      "case": "learning",
+      "prompt": "A",
+      "notes": "do ai learning",
+      "expected": "AI learning steps; no deadline",
+      "expected_deadline": null,
+      "schema_pass": true,
+      "meaning_pass": true,
+      "raw_response": {
+        "id": "resp_02e5127dcca79ee3006afe40687b3c87d29b0981a353e9fe81",
+        "access_programs": null,
+        "created_at": 1795047528.0,
+        "error": null,
+        "incomplete_details": null,
+        "instructions": null,
+        "metadata": {},
+        "model": "gpt-4.1-mini-2025-04-14",
+        "object": "response",
+        "output": [
+          {
+            "id": "msg_02e5127dcca79ee3006afe4068ee9087d292b2a818c73cb305",
+            "content": [
+              {
+                "annotations": [],
+                "text": "{\"title\":\"AI Learning\",\"steps\":[\"Research foundational AI concepts\",\"Practice coding AI algorithms\",\"Apply AI knowledge to projects\"],\"deadline\":null}",
+                "type": "output_text",
+                "logprobs": [],
+                "parsed": {
+                  "title": "AI Learning",
+                  "steps": [
+                    "Research foundational AI concepts",
+                    "Practice coding AI algorithms",
+                    "Apply AI knowledge to projects"
+                  ],
+                  "deadline": null
+                }
+              }
+            ],
+            "role": "assistant",
+            "status": "completed",
+            "type": "message",
+            "phase": null
+          }
+        ],
+        "parallel_tool_calls": true,
+        "temperature": 1.0,
+        "tool_choice": "auto",
+        "tools": [],
+        "top_p": 1.0,
+        "background": false,
+        "completed_at": 1795047529.0,
+        "conversation": null,
+        "image": {
+          "context_compression": "disabled"
+        },
+        "input_transformations": [],
+        "max_output_tokens": null,
+        "max_tool_calls": null,
+        "moderation": null,
+        "previous_response_id": null,
+        "prompt": null,
+        "prompt_cache_diagnostics": null,
+        "prompt_cache_key": null,
+        "prompt_cache_options": null,
+        "prompt_cache_retention": "in_memory",
+        "reasoning": {
+          "context": null,
+          "effort": null,
+          "generate_summary": null,
+          "mode": null,
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "status": "completed",
+        "text": {
+          "format": {
+            "name": "Brief",
+            "schema_": {
+              "properties": {
+                "title": {
+                  "title": "Title",
+                  "type": "string"
+                },
+                "steps": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "maxItems": 3,
+                  "minItems": 3,
+                  "title": "Steps",
+                  "type": "array"
+                },
+                "deadline": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "title": "Deadline"
+                }
+              },
+              "required": [
+                "title",
+                "steps",
+                "deadline"
+              ],
+              "title": "Brief",
+              "type": "object",
+              "additionalProperties": false
+            },
+            "type": "json_schema",
+            "description": null,
+            "strict": true
+          },
+          "verbosity": "medium"
+        },
+        "tool_usage": {
+          "image_gen": {
+            "input_tokens": 0,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "output_tokens": 0,
+            "total_tokens": 0,
+            "cached_tokens": null,
+            "cached_tokens_details": null,
+            "output_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            }
+          },
+          "web_search": {
+            "num_requests": 0
+          }
+        },
+        "top_logprobs": 0,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 109,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens_details": {
+              "ttl_12h_tokens": 0,
+              "ttl_30m_tokens": 0
+            }
+          },
+          "output_tokens": 30,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 139
+        },
+        "user": null,
+        "billing": {
+          "payer": "openai"
+        },
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "store": true
+      },
+      "status": "parsed",
+      "output": {
+        "title": "AI Learning",
+        "steps": [
+          "Research foundational AI concepts",
+          "Practice coding AI algorithms",
+          "Apply AI knowledge to projects"
+        ],
+        "deadline": null
+      },
+      "deadline_pass": true,
+      "meaning_review_by": "Codex; qualitative review against saved labels",
+      "meaning_review": "Preserves labeled intent, constraints, and deadline; suggested actions may elaborate on notes."
+    },
+    {
+      "case": "learning",
+      "prompt": "B",
+      "notes": "do ai learning",
+      "expected": "AI learning steps; no deadline",
+      "expected_deadline": null,
+      "schema_pass": true,
+      "meaning_pass": true,
+      "raw_response": {
+        "id": "resp_0d10a5d8f018ae1c006afe4069c12887d28cd67c7f8e0cb71c",
+        "access_programs": null,
+        "created_at": 1795047529.0,
+        "error": null,
+        "incomplete_details": null,
+        "instructions": null,
+        "metadata": {},
+        "model": "gpt-4.1-mini-2025-04-14",
+        "object": "response",
+        "output": [
+          {
+            "id": "msg_0d10a5d8f018ae1c006afe406a5b2c87d2b12e83d1f0712ab9",
+            "content": [
+              {
+                "annotations": [],
+                "text": "{\"title\":\"AI Learning Initiative\",\"steps\":[\"Identify key AI learning resources and courses.\",\"Develop a structured study plan incorporating these resources.\",\"Set measurable goals to track progress in AI knowledge.\"],\"deadline\":null}",
+                "type": "output_text",
+                "logprobs": [],
+                "parsed": {
+                  "title": "AI Learning Initiative",
+                  "steps": [
+                    "Identify key AI learning resources and courses.",
+                    "Develop a structured study plan incorporating these resources.",
+                    "Set measurable goals to track progress in AI knowledge."
+                  ],
+                  "deadline": null
+                }
+              }
+            ],
+            "role": "assistant",
+            "status": "completed",
+            "type": "message",
+            "phase": null
+          }
+        ],
+        "parallel_tool_calls": true,
+        "temperature": 1.0,
+        "tool_choice": "auto",
+        "tools": [],
+        "top_p": 1.0,
+        "background": false,
+        "completed_at": 1795047530.0,
+        "conversation": null,
+        "image": {
+          "context_compression": "disabled"
+        },
+        "input_transformations": [],
+        "max_output_tokens": null,
+        "max_tool_calls": null,
+        "moderation": null,
+        "previous_response_id": null,
+        "prompt": null,
+        "prompt_cache_diagnostics": null,
+        "prompt_cache_key": null,
+        "prompt_cache_options": null,
+        "prompt_cache_retention": "in_memory",
+        "reasoning": {
+          "context": null,
+          "effort": null,
+          "generate_summary": null,
+          "mode": null,
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "status": "completed",
+        "text": {
+          "format": {
+            "name": "Brief",
+            "schema_": {
+              "properties": {
+                "title": {
+                  "title": "Title",
+                  "type": "string"
+                },
+                "steps": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "maxItems": 3,
+                  "minItems": 3,
+                  "title": "Steps",
+                  "type": "array"
+                },
+                "deadline": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "title": "Deadline"
+                }
+              },
+              "required": [
+                "title",
+                "steps",
+                "deadline"
+              ],
+              "title": "Brief",
+              "type": "object",
+              "additionalProperties": false
+            },
+            "type": "json_schema",
+            "description": null,
+            "strict": true
+          },
+          "verbosity": "medium"
+        },
+        "tool_usage": {
+          "image_gen": {
+            "input_tokens": 0,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "output_tokens": 0,
+            "total_tokens": 0,
+            "cached_tokens": null,
+            "cached_tokens_details": null,
+            "output_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            }
+          },
+          "web_search": {
+            "num_requests": 0
+          }
+        },
+        "top_logprobs": 0,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 133,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens_details": {
+              "ttl_12h_tokens": 0,
+              "ttl_30m_tokens": 0
+            }
+          },
+          "output_tokens": 42,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 175
+        },
+        "user": null,
+        "billing": {
+          "payer": "openai"
+        },
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "store": true
+      },
+      "status": "parsed",
+      "output": {
+        "title": "AI Learning Initiative",
+        "steps": [
+          "Identify key AI learning resources and courses.",
+          "Develop a structured study plan incorporating these resources.",
+          "Set measurable goals to track progress in AI knowledge."
+        ],
+        "deadline": null
+      },
+      "deadline_pass": true,
+      "meaning_review_by": "Codex; qualitative review against saved labels",
+      "meaning_review": "Preserves labeled intent, constraints, and deadline; suggested actions may elaborate on notes."
+    },
+    {
+      "case": "deadline",
+      "prompt": "A",
+      "notes": "do ai learning by Friday",
+      "expected": "AI learning steps; Friday deadline",
+      "expected_deadline": "Friday",
+      "schema_pass": true,
+      "meaning_pass": true,
+      "raw_response": {
+        "id": "resp_026fbaeea9b98583006afe406b682887d29615977df1726805",
+        "access_programs": null,
+        "created_at": 1795047531.0,
+        "error": null,
+        "incomplete_details": null,
+        "instructions": null,
+        "metadata": {},
+        "model": "gpt-4.1-mini-2025-04-14",
+        "object": "response",
+        "output": [
+          {
+            "id": "msg_026fbaeea9b98583006afe406bde8087d2942a61c622f4d57d",
+            "content": [
+              {
+                "annotations": [],
+                "text": "{\"title\":\"AI Learning\",\"steps\":[\"Set up learning environment\",\"Complete initial AI tutorials\",\"Practice with AI projects\"],\"deadline\":\"Friday\"}",
+                "type": "output_text",
+                "logprobs": [],
+                "parsed": {
+                  "title": "AI Learning",
+                  "steps": [
+                    "Set up learning environment",
+                    "Complete initial AI tutorials",
+                    "Practice with AI projects"
+                  ],
+                  "deadline": "Friday"
+                }
+              }
+            ],
+            "role": "assistant",
+            "status": "completed",
+            "type": "message",
+            "phase": null
+          }
+        ],
+        "parallel_tool_calls": true,
+        "temperature": 1.0,
+        "tool_choice": "auto",
+        "tools": [],
+        "top_p": 1.0,
+        "background": false,
+        "completed_at": 1795047532.0,
+        "conversation": null,
+        "image": {
+          "context_compression": "disabled"
+        },
+        "input_transformations": [],
+        "max_output_tokens": null,
+        "max_tool_calls": null,
+        "moderation": null,
+        "previous_response_id": null,
+        "prompt": null,
+        "prompt_cache_diagnostics": null,
+        "prompt_cache_key": null,
+        "prompt_cache_options": null,
+        "prompt_cache_retention": "in_memory",
+        "reasoning": {
+          "context": null,
+          "effort": null,
+          "generate_summary": null,
+          "mode": null,
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "status": "completed",
+        "text": {
+          "format": {
+            "name": "Brief",
+            "schema_": {
+              "properties": {
+                "title": {
+                  "title": "Title",
+                  "type": "string"
+                },
+                "steps": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "maxItems": 3,
+                  "minItems": 3,
+                  "title": "Steps",
+                  "type": "array"
+                },
+                "deadline": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "title": "Deadline"
+                }
+              },
+              "required": [
+                "title",
+                "steps",
+                "deadline"
+              ],
+              "title": "Brief",
+              "type": "object",
+              "additionalProperties": false
+            },
+            "type": "json_schema",
+            "description": null,
+            "strict": true
+          },
+          "verbosity": "medium"
+        },
+        "tool_usage": {
+          "image_gen": {
+            "input_tokens": 0,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "output_tokens": 0,
+            "total_tokens": 0,
+            "cached_tokens": null,
+            "cached_tokens_details": null,
+            "output_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            }
+          },
+          "web_search": {
+            "num_requests": 0
+          }
+        },
+        "top_logprobs": 0,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 111,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens_details": {
+              "ttl_12h_tokens": 0,
+              "ttl_30m_tokens": 0
+            }
+          },
+          "output_tokens": 29,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 140
+        },
+        "user": null,
+        "billing": {
+          "payer": "openai"
+        },
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "store": true
+      },
+      "status": "parsed",
+      "output": {
+        "title": "AI Learning",
+        "steps": [
+          "Set up learning environment",
+          "Complete initial AI tutorials",
+          "Practice with AI projects"
+        ],
+        "deadline": "Friday"
+      },
+      "deadline_pass": true,
+      "meaning_review_by": "Codex; qualitative review against saved labels",
+      "meaning_review": "Preserves labeled intent, constraints, and deadline; suggested actions may elaborate on notes."
+    },
+    {
+      "case": "deadline",
+      "prompt": "B",
+      "notes": "do ai learning by Friday",
+      "expected": "AI learning steps; Friday deadline",
+      "expected_deadline": "Friday",
+      "schema_pass": true,
+      "meaning_pass": false,
+      "raw_response": {
+        "id": "resp_018eb9ae92b98fd5006afe406cdaa887d293be0e04a0419bc6",
+        "access_programs": null,
+        "created_at": 1795047532.0,
+        "error": null,
+        "incomplete_details": null,
+        "instructions": null,
+        "metadata": {},
+        "model": "gpt-4.1-mini-2025-04-14",
+        "object": "response",
+        "output": [
+          {
+            "id": "msg_018eb9ae92b98fd5006afe406d145487d2b0bba4ea45373515",
+            "content": [
+              {
+                "annotations": [],
+                "text": "{\"title\":\"Complete AI Learning\",\"steps\":[\"Set specific learning objectives for AI by Wednesday\",\"Gather and organize learning materials by Thursday\",\"Complete AI learning sessions by Friday\"],\"deadline\":\"Friday\"}",
+                "type": "output_text",
+                "logprobs": [],
+                "parsed": {
+                  "title": "Complete AI Learning",
+                  "steps": [
+                    "Set specific learning objectives for AI by Wednesday",
+                    "Gather and organize learning materials by Thursday",
+                    "Complete AI learning sessions by Friday"
+                  ],
+                  "deadline": "Friday"
+                }
+              }
+            ],
+            "role": "assistant",
+            "status": "completed",
+            "type": "message",
+            "phase": null
+          }
+        ],
+        "parallel_tool_calls": true,
+        "temperature": 1.0,
+        "tool_choice": "auto",
+        "tools": [],
+        "top_p": 1.0,
+        "background": false,
+        "completed_at": 1795047533.0,
+        "conversation": null,
+        "image": {
+          "context_compression": "disabled"
+        },
+        "input_transformations": [],
+        "max_output_tokens": null,
+        "max_tool_calls": null,
+        "moderation": null,
+        "previous_response_id": null,
+        "prompt": null,
+        "prompt_cache_diagnostics": null,
+        "prompt_cache_key": null,
+        "prompt_cache_options": null,
+        "prompt_cache_retention": "in_memory",
+        "reasoning": {
+          "context": null,
+          "effort": null,
+          "generate_summary": null,
+          "mode": null,
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "status": "completed",
+        "text": {
+          "format": {
+            "name": "Brief",
+            "schema_": {
+              "properties": {
+                "title": {
+                  "title": "Title",
+                  "type": "string"
+                },
+                "steps": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "maxItems": 3,
+                  "minItems": 3,
+                  "title": "Steps",
+                  "type": "array"
+                },
+                "deadline": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "title": "Deadline"
+                }
+              },
+              "required": [
+                "title",
+                "steps",
+                "deadline"
+              ],
+              "title": "Brief",
+              "type": "object",
+              "additionalProperties": false
+            },
+            "type": "json_schema",
+            "description": null,
+            "strict": true
+          },
+          "verbosity": "medium"
+        },
+        "tool_usage": {
+          "image_gen": {
+            "input_tokens": 0,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "output_tokens": 0,
+            "total_tokens": 0,
+            "cached_tokens": null,
+            "cached_tokens_details": null,
+            "output_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            }
+          },
+          "web_search": {
+            "num_requests": 0
+          }
+        },
+        "top_logprobs": 0,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 135,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens_details": {
+              "ttl_12h_tokens": 0,
+              "ttl_30m_tokens": 0
+            }
+          },
+          "output_tokens": 39,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 174
+        },
+        "user": null,
+        "billing": {
+          "payer": "openai"
+        },
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "store": true
+      },
+      "status": "parsed",
+      "output": {
+        "title": "Complete AI Learning",
+        "steps": [
+          "Set specific learning objectives for AI by Wednesday",
+          "Gather and organize learning materials by Thursday",
+          "Complete AI learning sessions by Friday"
+        ],
+        "deadline": "Friday"
+      },
+      "deadline_pass": true,
+      "meaning_review_by": "Codex; qualitative review against saved labels",
+      "meaning_review": "Invented Wednesday and Thursday intermediate deadlines absent from notes."
+    },
+    {
+      "case": "blank",
+      "prompt": "A",
+      "notes": "",
+      "expected": "Reject locally without a model call",
+      "expected_deadline": null,
+      "schema_pass": null,
+      "meaning_pass": null,
+      "status": "rejected_blank",
+      "local_guard_pass": true,
+      "meaning_review_by": "Codex; qualitative review against saved labels",
+      "meaning_review": "Not applicable: rejected locally before model call."
+    },
+    {
+      "case": "blank",
+      "prompt": "B",
+      "notes": "",
+      "expected": "Reject locally without a model call",
+      "expected_deadline": null,
+      "schema_pass": null,
+      "meaning_pass": null,
+      "status": "rejected_blank",
+      "local_guard_pass": true,
+      "meaning_review_by": "Codex; qualitative review against saved labels",
+      "meaning_review": "Not applicable: rejected locally before model call."
+    },
+    {
+      "case": "correction",
+      "prompt": "A",
+      "notes": "Plan a game night for Friday. Actually, make it Saturday instead.",
+      "expected": "Game night; use Saturday correction",
+      "expected_deadline": "Saturday",
+      "schema_pass": true,
+      "meaning_pass": true,
+      "raw_response": {
+        "id": "resp_01ec94d48276adaf006afe406ddc1087d2931d2250ef22acc2",
+        "access_programs": null,
+        "created_at": 1795047533.0,
+        "error": null,
+        "incomplete_details": null,
+        "instructions": null,
+        "metadata": {},
+        "model": "gpt-4.1-mini-2025-04-14",
+        "object": "response",
+        "output": [
+          {
+            "id": "msg_01ec94d48276adaf006afe406e275887d29200dad824e0b3bd",
+            "content": [
+              {
+                "annotations": [],
+                "text": "{\"title\":\"Plan a Game Night\",\"steps\":[\"Decide on the games to play\",\"Invite friends to the game night\",\"Prepare snacks and drinks\"],\"deadline\":\"Saturday\"}",
+                "type": "output_text",
+                "logprobs": [],
+                "parsed": {
+                  "title": "Plan a Game Night",
+                  "steps": [
+                    "Decide on the games to play",
+                    "Invite friends to the game night",
+                    "Prepare snacks and drinks"
+                  ],
+                  "deadline": "Saturday"
+                }
+              }
+            ],
+            "role": "assistant",
+            "status": "completed",
+            "type": "message",
+            "phase": null
+          }
+        ],
+        "parallel_tool_calls": true,
+        "temperature": 1.0,
+        "tool_choice": "auto",
+        "tools": [],
+        "top_p": 1.0,
+        "background": false,
+        "completed_at": 1795047534.0,
+        "conversation": null,
+        "image": {
+          "context_compression": "disabled"
+        },
+        "input_transformations": [],
+        "max_output_tokens": null,
+        "max_tool_calls": null,
+        "moderation": null,
+        "previous_response_id": null,
+        "prompt": null,
+        "prompt_cache_diagnostics": null,
+        "prompt_cache_key": null,
+        "prompt_cache_options": null,
+        "prompt_cache_retention": "in_memory",
+        "reasoning": {
+          "context": null,
+          "effort": null,
+          "generate_summary": null,
+          "mode": null,
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "status": "completed",
+        "text": {
+          "format": {
+            "name": "Brief",
+            "schema_": {
+              "properties": {
+                "title": {
+                  "title": "Title",
+                  "type": "string"
+                },
+                "steps": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "maxItems": 3,
+                  "minItems": 3,
+                  "title": "Steps",
+                  "type": "array"
+                },
+                "deadline": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "title": "Deadline"
+                }
+              },
+              "required": [
+                "title",
+                "steps",
+                "deadline"
+              ],
+              "title": "Brief",
+              "type": "object",
+              "additionalProperties": false
+            },
+            "type": "json_schema",
+            "description": null,
+            "strict": true
+          },
+          "verbosity": "medium"
+        },
+        "tool_usage": {
+          "image_gen": {
+            "input_tokens": 0,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "output_tokens": 0,
+            "total_tokens": 0,
+            "cached_tokens": null,
+            "cached_tokens_details": null,
+            "output_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            }
+          },
+          "web_search": {
+            "num_requests": 0
+          }
+        },
+        "top_logprobs": 0,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 120,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens_details": {
+              "ttl_12h_tokens": 0,
+              "ttl_30m_tokens": 0
+            }
+          },
+          "output_tokens": 36,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 156
+        },
+        "user": null,
+        "billing": {
+          "payer": "openai"
+        },
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "store": true
+      },
+      "status": "parsed",
+      "output": {
+        "title": "Plan a Game Night",
+        "steps": [
+          "Decide on the games to play",
+          "Invite friends to the game night",
+          "Prepare snacks and drinks"
+        ],
+        "deadline": "Saturday"
+      },
+      "deadline_pass": true,
+      "meaning_review_by": "Codex; qualitative review against saved labels",
+      "meaning_review": "Preserves labeled intent, constraints, and deadline; suggested actions may elaborate on notes."
+    },
+    {
+      "case": "correction",
+      "prompt": "B",
+      "notes": "Plan a game night for Friday. Actually, make it Saturday instead.",
+      "expected": "Game night; use Saturday correction",
+      "expected_deadline": "Saturday",
+      "schema_pass": true,
+      "meaning_pass": false,
+      "raw_response": {
+        "id": "resp_08ff34737a47a55f006afe406f0d7887d296aaca30730d9015",
+        "access_programs": null,
+        "created_at": 1795047535.0,
+        "error": null,
+        "incomplete_details": null,
+        "instructions": null,
+        "metadata": {},
+        "model": "gpt-4.1-mini-2025-04-14",
+        "object": "response",
+        "output": [
+          {
+            "id": "msg_08ff34737a47a55f006afe406f645c87d28c4dc9645fbf0f42",
+            "content": [
+              {
+                "annotations": [],
+                "text": "{\"title\":\"Plan Game Night for Saturday\",\"steps\":[\"Confirm the date as Saturday for the game night.\",\"Invite friends to join the game night on Saturday.\",\"Prepare necessary games and snacks for the event.\"],\"deadline\":null}",
+                "type": "output_text",
+                "logprobs": [],
+                "parsed": {
+                  "title": "Plan Game Night for Saturday",
+                  "steps": [
+                    "Confirm the date as Saturday for the game night.",
+                    "Invite friends to join the game night on Saturday.",
+                    "Prepare necessary games and snacks for the event."
+                  ],
+                  "deadline": null
+                }
+              }
+            ],
+            "role": "assistant",
+            "status": "completed",
+            "type": "message",
+            "phase": null
+          }
+        ],
+        "parallel_tool_calls": true,
+        "temperature": 1.0,
+        "tool_choice": "auto",
+        "tools": [],
+        "top_p": 1.0,
+        "background": false,
+        "completed_at": 1795047535.0,
+        "conversation": null,
+        "image": {
+          "context_compression": "disabled"
+        },
+        "input_transformations": [],
+        "max_output_tokens": null,
+        "max_tool_calls": null,
+        "moderation": null,
+        "previous_response_id": null,
+        "prompt": null,
+        "prompt_cache_diagnostics": null,
+        "prompt_cache_key": null,
+        "prompt_cache_options": null,
+        "prompt_cache_retention": "in_memory",
+        "reasoning": {
+          "context": null,
+          "effort": null,
+          "generate_summary": null,
+          "mode": null,
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "status": "completed",
+        "text": {
+          "format": {
+            "name": "Brief",
+            "schema_": {
+              "properties": {
+                "title": {
+                  "title": "Title",
+                  "type": "string"
+                },
+                "steps": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "maxItems": 3,
+                  "minItems": 3,
+                  "title": "Steps",
+                  "type": "array"
+                },
+                "deadline": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "title": "Deadline"
+                }
+              },
+              "required": [
+                "title",
+                "steps",
+                "deadline"
+              ],
+              "title": "Brief",
+              "type": "object",
+              "additionalProperties": false
+            },
+            "type": "json_schema",
+            "description": null,
+            "strict": true
+          },
+          "verbosity": "medium"
+        },
+        "tool_usage": {
+          "image_gen": {
+            "input_tokens": 0,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "output_tokens": 0,
+            "total_tokens": 0,
+            "cached_tokens": null,
+            "cached_tokens_details": null,
+            "output_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            }
+          },
+          "web_search": {
+            "num_requests": 0
+          }
+        },
+        "top_logprobs": 0,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 144,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens_details": {
+              "ttl_12h_tokens": 0,
+              "ttl_30m_tokens": 0
+            }
+          },
+          "output_tokens": 46,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 190
+        },
+        "user": null,
+        "billing": {
+          "payer": "openai"
+        },
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "store": true
+      },
+      "status": "parsed",
+      "output": {
+        "title": "Plan Game Night for Saturday",
+        "steps": [
+          "Confirm the date as Saturday for the game night.",
+          "Invite friends to join the game night on Saturday.",
+          "Prepare necessary games and snacks for the event."
+        ],
+        "deadline": null
+      },
+      "deadline_pass": false,
+      "meaning_review_by": "Codex; qualitative review against saved labels",
+      "meaning_review": "Saturday appears in title and steps but required deadline field is null."
+    },
+    {
+      "case": "no_deadline",
+      "prompt": "A",
+      "notes": "Learn Python. Do not set a deadline.",
+      "expected": "Python learning; no deadline",
+      "expected_deadline": null,
+      "schema_pass": true,
+      "meaning_pass": true,
+      "raw_response": {
+        "id": "resp_077c8f35d2702355006afe4070335087d298917df5a3b5e338",
+        "access_programs": null,
+        "created_at": 1795047536.0,
+        "error": null,
+        "incomplete_details": null,
+        "instructions": null,
+        "metadata": {},
+        "model": "gpt-4.1-mini-2025-04-14",
+        "object": "response",
+        "output": [
+          {
+            "id": "msg_077c8f35d2702355006afe4070a8f887d2a8ee4115369103dd",
+            "content": [
+              {
+                "annotations": [],
+                "text": "{\"title\":\"Learn Python\",\"steps\":[\"Research Python basics\",\"Practice writing simple Python programs\",\"Explore advanced Python topics\"],\"deadline\":null}",
+                "type": "output_text",
+                "logprobs": [],
+                "parsed": {
+                  "title": "Learn Python",
+                  "steps": [
+                    "Research Python basics",
+                    "Practice writing simple Python programs",
+                    "Explore advanced Python topics"
+                  ],
+                  "deadline": null
+                }
+              }
+            ],
+            "role": "assistant",
+            "status": "completed",
+            "type": "message",
+            "phase": null
+          }
+        ],
+        "parallel_tool_calls": true,
+        "temperature": 1.0,
+        "tool_choice": "auto",
+        "tools": [],
+        "top_p": 1.0,
+        "background": false,
+        "completed_at": 1795047536.0,
+        "conversation": null,
+        "image": {
+          "context_compression": "disabled"
+        },
+        "input_transformations": [],
+        "max_output_tokens": null,
+        "max_tool_calls": null,
+        "moderation": null,
+        "previous_response_id": null,
+        "prompt": null,
+        "prompt_cache_diagnostics": null,
+        "prompt_cache_key": null,
+        "prompt_cache_options": null,
+        "prompt_cache_retention": "in_memory",
+        "reasoning": {
+          "context": null,
+          "effort": null,
+          "generate_summary": null,
+          "mode": null,
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "status": "completed",
+        "text": {
+          "format": {
+            "name": "Brief",
+            "schema_": {
+              "properties": {
+                "title": {
+                  "title": "Title",
+                  "type": "string"
+                },
+                "steps": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "maxItems": 3,
+                  "minItems": 3,
+                  "title": "Steps",
+                  "type": "array"
+                },
+                "deadline": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "title": "Deadline"
+                }
+              },
+              "required": [
+                "title",
+                "steps",
+                "deadline"
+              ],
+              "title": "Brief",
+              "type": "object",
+              "additionalProperties": false
+            },
+            "type": "json_schema",
+            "description": null,
+            "strict": true
+          },
+          "verbosity": "medium"
+        },
+        "tool_usage": {
+          "image_gen": {
+            "input_tokens": 0,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "output_tokens": 0,
+            "total_tokens": 0,
+            "cached_tokens": null,
+            "cached_tokens_details": null,
+            "output_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            }
+          },
+          "web_search": {
+            "num_requests": 0
+          }
+        },
+        "top_logprobs": 0,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 115,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens_details": {
+              "ttl_12h_tokens": 0,
+              "ttl_30m_tokens": 0
+            }
+          },
+          "output_tokens": 29,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 144
+        },
+        "user": null,
+        "billing": {
+          "payer": "openai"
+        },
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "store": true
+      },
+      "status": "parsed",
+      "output": {
+        "title": "Learn Python",
+        "steps": [
+          "Research Python basics",
+          "Practice writing simple Python programs",
+          "Explore advanced Python topics"
+        ],
+        "deadline": null
+      },
+      "deadline_pass": true,
+      "meaning_review_by": "Codex; qualitative review against saved labels",
+      "meaning_review": "Preserves labeled intent, constraints, and deadline; suggested actions may elaborate on notes."
+    },
+    {
+      "case": "no_deadline",
+      "prompt": "B",
+      "notes": "Learn Python. Do not set a deadline.",
+      "expected": "Python learning; no deadline",
+      "expected_deadline": null,
+      "schema_pass": true,
+      "meaning_pass": true,
+      "raw_response": {
+        "id": "resp_066377942eb729a8006afe4071523c87d2b6632ebe7606057d",
+        "access_programs": null,
+        "created_at": 1795047537.0,
+        "error": null,
+        "incomplete_details": null,
+        "instructions": null,
+        "metadata": {},
+        "model": "gpt-4.1-mini-2025-04-14",
+        "object": "response",
+        "output": [
+          {
+            "id": "msg_066377942eb729a8006afe4071a73c87d29ecccfff3e2984bb",
+            "content": [
+              {
+                "annotations": [],
+                "text": "{\"title\":\"Learn Python\",\"steps\":[\"Enroll in an introductory Python course\",\"Practice coding exercises daily\",\"Build small projects to reinforce learning\"],\"deadline\":null}",
+                "type": "output_text",
+                "logprobs": [],
+                "parsed": {
+                  "title": "Learn Python",
+                  "steps": [
+                    "Enroll in an introductory Python course",
+                    "Practice coding exercises daily",
+                    "Build small projects to reinforce learning"
+                  ],
+                  "deadline": null
+                }
+              }
+            ],
+            "role": "assistant",
+            "status": "completed",
+            "type": "message",
+            "phase": null
+          }
+        ],
+        "parallel_tool_calls": true,
+        "temperature": 1.0,
+        "tool_choice": "auto",
+        "tools": [],
+        "top_p": 1.0,
+        "background": false,
+        "completed_at": 1795047537.0,
+        "conversation": null,
+        "image": {
+          "context_compression": "disabled"
+        },
+        "input_transformations": [],
+        "max_output_tokens": null,
+        "max_tool_calls": null,
+        "moderation": null,
+        "previous_response_id": null,
+        "prompt": null,
+        "prompt_cache_diagnostics": null,
+        "prompt_cache_key": null,
+        "prompt_cache_options": null,
+        "prompt_cache_retention": "in_memory",
+        "reasoning": {
+          "context": null,
+          "effort": null,
+          "generate_summary": null,
+          "mode": null,
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "status": "completed",
+        "text": {
+          "format": {
+            "name": "Brief",
+            "schema_": {
+              "properties": {
+                "title": {
+                  "title": "Title",
+                  "type": "string"
+                },
+                "steps": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "maxItems": 3,
+                  "minItems": 3,
+                  "title": "Steps",
+                  "type": "array"
+                },
+                "deadline": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "title": "Deadline"
+                }
+              },
+              "required": [
+                "title",
+                "steps",
+                "deadline"
+              ],
+              "title": "Brief",
+              "type": "object",
+              "additionalProperties": false
+            },
+            "type": "json_schema",
+            "description": null,
+            "strict": true
+          },
+          "verbosity": "medium"
+        },
+        "tool_usage": {
+          "image_gen": {
+            "input_tokens": 0,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "output_tokens": 0,
+            "total_tokens": 0,
+            "cached_tokens": null,
+            "cached_tokens_details": null,
+            "output_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            }
+          },
+          "web_search": {
+            "num_requests": 0
+          }
+        },
+        "top_logprobs": 0,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 139,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens_details": {
+              "ttl_12h_tokens": 0,
+              "ttl_30m_tokens": 0
+            }
+          },
+          "output_tokens": 33,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 172
+        },
+        "user": null,
+        "billing": {
+          "payer": "openai"
+        },
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "store": true
+      },
+      "status": "parsed",
+      "output": {
+        "title": "Learn Python",
+        "steps": [
+          "Enroll in an introductory Python course",
+          "Practice coding exercises daily",
+          "Build small projects to reinforce learning"
+        ],
+        "deadline": null
+      },
+      "deadline_pass": true,
+      "meaning_review_by": "Codex; qualitative review against saved labels",
+      "meaning_review": "Preserves labeled intent, constraints, and deadline; suggested actions may elaborate on notes."
+    },
+    {
+      "case": "three_topics",
+      "prompt": "A",
+      "notes": "Prepare for my Python quiz by Monday: review loops, practice functions, and take a practice quiz.",
+      "expected": "Cover loops, functions, practice quiz; Monday",
+      "expected_deadline": "Monday",
+      "schema_pass": true,
+      "meaning_pass": true,
+      "raw_response": {
+        "id": "resp_04db89a1709aa8a0006afe40725ed087d2a56237df8fdf1fef",
+        "access_programs": null,
+        "created_at": 1795047538.0,
+        "error": null,
+        "incomplete_details": null,
+        "instructions": null,
+        "metadata": {},
+        "model": "gpt-4.1-mini-2025-04-14",
+        "object": "response",
+        "output": [
+          {
+            "id": "msg_04db89a1709aa8a0006afe40729ca487d2b70417cae8d95024",
+            "content": [
+              {
+                "annotations": [],
+                "text": "{\"title\":\"Prepare for Python Quiz\",\"steps\":[\"Review loops\",\"Practice functions\",\"Take a practice quiz\"],\"deadline\":\"Monday\"}",
+                "type": "output_text",
+                "logprobs": [],
+                "parsed": {
+                  "title": "Prepare for Python Quiz",
+                  "steps": [
+                    "Review loops",
+                    "Practice functions",
+                    "Take a practice quiz"
+                  ],
+                  "deadline": "Monday"
+                }
+              }
+            ],
+            "role": "assistant",
+            "status": "completed",
+            "type": "message",
+            "phase": null
+          }
+        ],
+        "parallel_tool_calls": true,
+        "temperature": 1.0,
+        "tool_choice": "auto",
+        "tools": [],
+        "top_p": 1.0,
+        "background": false,
+        "completed_at": 1795047538.0,
+        "conversation": null,
+        "image": {
+          "context_compression": "disabled"
+        },
+        "input_transformations": [],
+        "max_output_tokens": null,
+        "max_tool_calls": null,
+        "moderation": null,
+        "previous_response_id": null,
+        "prompt": null,
+        "prompt_cache_diagnostics": null,
+        "prompt_cache_key": null,
+        "prompt_cache_options": null,
+        "prompt_cache_retention": "in_memory",
+        "reasoning": {
+          "context": null,
+          "effort": null,
+          "generate_summary": null,
+          "mode": null,
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "status": "completed",
+        "text": {
+          "format": {
+            "name": "Brief",
+            "schema_": {
+              "properties": {
+                "title": {
+                  "title": "Title",
+                  "type": "string"
+                },
+                "steps": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "maxItems": 3,
+                  "minItems": 3,
+                  "title": "Steps",
+                  "type": "array"
+                },
+                "deadline": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "title": "Deadline"
+                }
+              },
+              "required": [
+                "title",
+                "steps",
+                "deadline"
+              ],
+              "title": "Brief",
+              "type": "object",
+              "additionalProperties": false
+            },
+            "type": "json_schema",
+            "description": null,
+            "strict": true
+          },
+          "verbosity": "medium"
+        },
+        "tool_usage": {
+          "image_gen": {
+            "input_tokens": 0,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "output_tokens": 0,
+            "total_tokens": 0,
+            "cached_tokens": null,
+            "cached_tokens_details": null,
+            "output_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            }
+          },
+          "web_search": {
+            "num_requests": 0
+          }
+        },
+        "top_logprobs": 0,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 126,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens_details": {
+              "ttl_12h_tokens": 0,
+              "ttl_30m_tokens": 0
+            }
+          },
+          "output_tokens": 27,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 153
+        },
+        "user": null,
+        "billing": {
+          "payer": "openai"
+        },
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "store": true
+      },
+      "status": "parsed",
+      "output": {
+        "title": "Prepare for Python Quiz",
+        "steps": [
+          "Review loops",
+          "Practice functions",
+          "Take a practice quiz"
+        ],
+        "deadline": "Monday"
+      },
+      "deadline_pass": true,
+      "meaning_review_by": "Codex; qualitative review against saved labels",
+      "meaning_review": "Preserves labeled intent, constraints, and deadline; suggested actions may elaborate on notes."
+    },
+    {
+      "case": "three_topics",
+      "prompt": "B",
+      "notes": "Prepare for my Python quiz by Monday: review loops, practice functions, and take a practice quiz.",
+      "expected": "Cover loops, functions, practice quiz; Monday",
+      "expected_deadline": "Monday",
+      "schema_pass": true,
+      "meaning_pass": true,
+      "raw_response": {
+        "id": "resp_08142cdd944b739e006afe40734d2487d287275ec7968e04ad",
+        "access_programs": null,
+        "created_at": 1795047539.0,
+        "error": null,
+        "incomplete_details": null,
+        "instructions": null,
+        "metadata": {},
+        "model": "gpt-4.1-mini-2025-04-14",
+        "object": "response",
+        "output": [
+          {
+            "id": "msg_08142cdd944b739e006afe4073c5b887d2865de159e1d8551a",
+            "content": [
+              {
+                "annotations": [],
+                "text": "{\"title\":\"Python Quiz Preparation\",\"steps\":[\"Review loops.\",\"Practice functions.\",\"Take a practice quiz.\"],\"deadline\":\"Monday\"}",
+                "type": "output_text",
+                "logprobs": [],
+                "parsed": {
+                  "title": "Python Quiz Preparation",
+                  "steps": [
+                    "Review loops.",
+                    "Practice functions.",
+                    "Take a practice quiz."
+                  ],
+                  "deadline": "Monday"
+                }
+              }
+            ],
+            "role": "assistant",
+            "status": "completed",
+            "type": "message",
+            "phase": null
+          }
+        ],
+        "parallel_tool_calls": true,
+        "temperature": 1.0,
+        "tool_choice": "auto",
+        "tools": [],
+        "top_p": 1.0,
+        "background": false,
+        "completed_at": 1795047540.0,
+        "conversation": null,
+        "image": {
+          "context_compression": "disabled"
+        },
+        "input_transformations": [],
+        "max_output_tokens": null,
+        "max_tool_calls": null,
+        "moderation": null,
+        "previous_response_id": null,
+        "prompt": null,
+        "prompt_cache_diagnostics": null,
+        "prompt_cache_key": null,
+        "prompt_cache_options": null,
+        "prompt_cache_retention": "in_memory",
+        "reasoning": {
+          "context": null,
+          "effort": null,
+          "generate_summary": null,
+          "mode": null,
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "status": "completed",
+        "text": {
+          "format": {
+            "name": "Brief",
+            "schema_": {
+              "properties": {
+                "title": {
+                  "title": "Title",
+                  "type": "string"
+                },
+                "steps": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "maxItems": 3,
+                  "minItems": 3,
+                  "title": "Steps",
+                  "type": "array"
+                },
+                "deadline": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "title": "Deadline"
+                }
+              },
+              "required": [
+                "title",
+                "steps",
+                "deadline"
+              ],
+              "title": "Brief",
+              "type": "object",
+              "additionalProperties": false
+            },
+            "type": "json_schema",
+            "description": null,
+            "strict": true
+          },
+          "verbosity": "medium"
+        },
+        "tool_usage": {
+          "image_gen": {
+            "input_tokens": 0,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "output_tokens": 0,
+            "total_tokens": 0,
+            "cached_tokens": null,
+            "cached_tokens_details": null,
+            "output_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            }
+          },
+          "web_search": {
+            "num_requests": 0
+          }
+        },
+        "top_logprobs": 0,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 150,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens_details": {
+              "ttl_12h_tokens": 0,
+              "ttl_30m_tokens": 0
+            }
+          },
+          "output_tokens": 26,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 176
+        },
+        "user": null,
+        "billing": {
+          "payer": "openai"
+        },
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "store": true
+      },
+      "status": "parsed",
+      "output": {
+        "title": "Python Quiz Preparation",
+        "steps": [
+          "Review loops.",
+          "Practice functions.",
+          "Take a practice quiz."
+        ],
+        "deadline": "Monday"
+      },
+      "deadline_pass": true,
+      "meaning_review_by": "Codex; qualitative review against saved labels",
+      "meaning_review": "Preserves labeled intent, constraints, and deadline; suggested actions may elaborate on notes."
+    },
+    {
+      "case": "completed",
+      "prompt": "A",
+      "notes": "Buy groceries and cook dinner by Sunday. I already bought the groceries.",
+      "expected": "Cook dinner; do not buy groceries again; Sunday",
+      "expected_deadline": "Sunday",
+      "schema_pass": true,
+      "meaning_pass": true,
+      "raw_response": {
+        "id": "resp_0ff87bc70f61ea1b006afe4074933c87d2b11f6f912682437e",
+        "access_programs": null,
+        "created_at": 1795047540.0,
+        "error": null,
+        "incomplete_details": null,
+        "instructions": null,
+        "metadata": {},
+        "model": "gpt-4.1-mini-2025-04-14",
+        "object": "response",
+        "output": [
+          {
+            "id": "msg_0ff87bc70f61ea1b006afe4075126087d2bdb809bbadbe70a2",
+            "content": [
+              {
+                "annotations": [],
+                "text": "{\"title\":\"Prepare Dinner\",\"steps\":[\"Check the groceries already bought\",\"Plan the dinner menu\",\"Cook dinner\"],\"deadline\":\"Sunday\"}",
+                "type": "output_text",
+                "logprobs": [],
+                "parsed": {
+                  "title": "Prepare Dinner",
+                  "steps": [
+                    "Check the groceries already bought",
+                    "Plan the dinner menu",
+                    "Cook dinner"
+                  ],
+                  "deadline": "Sunday"
+                }
+              }
+            ],
+            "role": "assistant",
+            "status": "completed",
+            "type": "message",
+            "phase": null
+          }
+        ],
+        "parallel_tool_calls": true,
+        "temperature": 1.0,
+        "tool_choice": "auto",
+        "tools": [],
+        "top_p": 1.0,
+        "background": false,
+        "completed_at": 1795047541.0,
+        "conversation": null,
+        "image": {
+          "context_compression": "disabled"
+        },
+        "input_transformations": [],
+        "max_output_tokens": null,
+        "max_tool_calls": null,
+        "moderation": null,
+        "previous_response_id": null,
+        "prompt": null,
+        "prompt_cache_diagnostics": null,
+        "prompt_cache_key": null,
+        "prompt_cache_options": null,
+        "prompt_cache_retention": "in_memory",
+        "reasoning": {
+          "context": null,
+          "effort": null,
+          "generate_summary": null,
+          "mode": null,
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "status": "completed",
+        "text": {
+          "format": {
+            "name": "Brief",
+            "schema_": {
+              "properties": {
+                "title": {
+                  "title": "Title",
+                  "type": "string"
+                },
+                "steps": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "maxItems": 3,
+                  "minItems": 3,
+                  "title": "Steps",
+                  "type": "array"
+                },
+                "deadline": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "title": "Deadline"
+                }
+              },
+              "required": [
+                "title",
+                "steps",
+                "deadline"
+              ],
+              "title": "Brief",
+              "type": "object",
+              "additionalProperties": false
+            },
+            "type": "json_schema",
+            "description": null,
+            "strict": true
+          },
+          "verbosity": "medium"
+        },
+        "tool_usage": {
+          "image_gen": {
+            "input_tokens": 0,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "output_tokens": 0,
+            "total_tokens": 0,
+            "cached_tokens": null,
+            "cached_tokens_details": null,
+            "output_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            }
+          },
+          "web_search": {
+            "num_requests": 0
+          }
+        },
+        "top_logprobs": 0,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 120,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens_details": {
+              "ttl_12h_tokens": 0,
+              "ttl_30m_tokens": 0
+            }
+          },
+          "output_tokens": 28,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 148
+        },
+        "user": null,
+        "billing": {
+          "payer": "openai"
+        },
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "store": true
+      },
+      "status": "parsed",
+      "output": {
+        "title": "Prepare Dinner",
+        "steps": [
+          "Check the groceries already bought",
+          "Plan the dinner menu",
+          "Cook dinner"
+        ],
+        "deadline": "Sunday"
+      },
+      "deadline_pass": true,
+      "meaning_review_by": "Codex; qualitative review against saved labels",
+      "meaning_review": "Preserves labeled intent, constraints, and deadline; suggested actions may elaborate on notes."
+    },
+    {
+      "case": "completed",
+      "prompt": "B",
+      "notes": "Buy groceries and cook dinner by Sunday. I already bought the groceries.",
+      "expected": "Cook dinner; do not buy groceries again; Sunday",
+      "expected_deadline": "Sunday",
+      "schema_pass": true,
+      "meaning_pass": true,
+      "raw_response": {
+        "id": "resp_07fcdf8396df734b006afe4075c62487d29e6125bf8e3fa124",
+        "access_programs": null,
+        "created_at": 1795047541.0,
+        "error": null,
+        "incomplete_details": null,
+        "instructions": null,
+        "metadata": {},
+        "model": "gpt-4.1-mini-2025-04-14",
+        "object": "response",
+        "output": [
+          {
+            "id": "msg_07fcdf8396df734b006afe40760d4087d2aa526af2b8c2bf53",
+            "content": [
+              {
+                "annotations": [],
+                "text": "{\"title\":\"Prepare Dinner by Sunday\",\"steps\":[\"Cook dinner using the purchased groceries\",\"Set the dining table before dinner\",\"Clean up the kitchen after cooking\"],\"deadline\":\"Sunday\"}",
+                "type": "output_text",
+                "logprobs": [],
+                "parsed": {
+                  "title": "Prepare Dinner by Sunday",
+                  "steps": [
+                    "Cook dinner using the purchased groceries",
+                    "Set the dining table before dinner",
+                    "Clean up the kitchen after cooking"
+                  ],
+                  "deadline": "Sunday"
+                }
+              }
+            ],
+            "role": "assistant",
+            "status": "completed",
+            "type": "message",
+            "phase": null
+          }
+        ],
+        "parallel_tool_calls": true,
+        "temperature": 1.0,
+        "tool_choice": "auto",
+        "tools": [],
+        "top_p": 1.0,
+        "background": false,
+        "completed_at": 1795047542.0,
+        "conversation": null,
+        "image": {
+          "context_compression": "disabled"
+        },
+        "input_transformations": [],
+        "max_output_tokens": null,
+        "max_tool_calls": null,
+        "moderation": null,
+        "previous_response_id": null,
+        "prompt": null,
+        "prompt_cache_diagnostics": null,
+        "prompt_cache_key": null,
+        "prompt_cache_options": null,
+        "prompt_cache_retention": "in_memory",
+        "reasoning": {
+          "context": null,
+          "effort": null,
+          "generate_summary": null,
+          "mode": null,
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "status": "completed",
+        "text": {
+          "format": {
+            "name": "Brief",
+            "schema_": {
+              "properties": {
+                "title": {
+                  "title": "Title",
+                  "type": "string"
+                },
+                "steps": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "maxItems": 3,
+                  "minItems": 3,
+                  "title": "Steps",
+                  "type": "array"
+                },
+                "deadline": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "title": "Deadline"
+                }
+              },
+              "required": [
+                "title",
+                "steps",
+                "deadline"
+              ],
+              "title": "Brief",
+              "type": "object",
+              "additionalProperties": false
+            },
+            "type": "json_schema",
+            "description": null,
+            "strict": true
+          },
+          "verbosity": "medium"
+        },
+        "tool_usage": {
+          "image_gen": {
+            "input_tokens": 0,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "output_tokens": 0,
+            "total_tokens": 0,
+            "cached_tokens": null,
+            "cached_tokens_details": null,
+            "output_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            }
+          },
+          "web_search": {
+            "num_requests": 0
+          }
+        },
+        "top_logprobs": 0,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 144,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens_details": {
+              "ttl_12h_tokens": 0,
+              "ttl_30m_tokens": 0
+            }
+          },
+          "output_tokens": 37,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 181
+        },
+        "user": null,
+        "billing": {
+          "payer": "openai"
+        },
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "store": true
+      },
+      "status": "parsed",
+      "output": {
+        "title": "Prepare Dinner by Sunday",
+        "steps": [
+          "Cook dinner using the purchased groceries",
+          "Set the dining table before dinner",
+          "Clean up the kitchen after cooking"
+        ],
+        "deadline": "Sunday"
+      },
+      "deadline_pass": true,
+      "meaning_review_by": "Codex; qualitative review against saved labels",
+      "meaning_review": "Preserves labeled intent, constraints, and deadline; suggested actions may elaborate on notes."
+    },
+    {
+      "case": "duration",
+      "prompt": "A",
+      "notes": "Practice Python for 20 minutes.",
+      "expected": "20-minute practice; no invented recurring schedule or deadline",
+      "expected_deadline": null,
+      "schema_pass": true,
+      "meaning_pass": true,
+      "raw_response": {
+        "id": "resp_0a0e9acced41fff4006afe4076bac487d2a0a01db3504200db",
+        "access_programs": null,
+        "created_at": 1795047542.0,
+        "error": null,
+        "incomplete_details": null,
+        "instructions": null,
+        "metadata": {},
+        "model": "gpt-4.1-mini-2025-04-14",
+        "object": "response",
+        "output": [
+          {
+            "id": "msg_0a0e9acced41fff4006afe40770f8487d2aca25538f43bddb2",
+            "content": [
+              {
+                "annotations": [],
+                "text": "{\"title\":\"Practice Python\",\"steps\":[\"Set a timer for 20 minutes\",\"Open a Python coding environment\",\"Practice Python coding for the set duration\"],\"deadline\":null}",
+                "type": "output_text",
+                "logprobs": [],
+                "parsed": {
+                  "title": "Practice Python",
+                  "steps": [
+                    "Set a timer for 20 minutes",
+                    "Open a Python coding environment",
+                    "Practice Python coding for the set duration"
+                  ],
+                  "deadline": null
+                }
+              }
+            ],
+            "role": "assistant",
+            "status": "completed",
+            "type": "message",
+            "phase": null
+          }
+        ],
+        "parallel_tool_calls": true,
+        "temperature": 1.0,
+        "tool_choice": "auto",
+        "tools": [],
+        "top_p": 1.0,
+        "background": false,
+        "completed_at": 1795047543.0,
+        "conversation": null,
+        "image": {
+          "context_compression": "disabled"
+        },
+        "input_transformations": [],
+        "max_output_tokens": null,
+        "max_tool_calls": null,
+        "moderation": null,
+        "previous_response_id": null,
+        "prompt": null,
+        "prompt_cache_diagnostics": null,
+        "prompt_cache_key": null,
+        "prompt_cache_options": null,
+        "prompt_cache_retention": "in_memory",
+        "reasoning": {
+          "context": null,
+          "effort": null,
+          "generate_summary": null,
+          "mode": null,
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "status": "completed",
+        "text": {
+          "format": {
+            "name": "Brief",
+            "schema_": {
+              "properties": {
+                "title": {
+                  "title": "Title",
+                  "type": "string"
+                },
+                "steps": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "maxItems": 3,
+                  "minItems": 3,
+                  "title": "Steps",
+                  "type": "array"
+                },
+                "deadline": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "title": "Deadline"
+                }
+              },
+              "required": [
+                "title",
+                "steps",
+                "deadline"
+              ],
+              "title": "Brief",
+              "type": "object",
+              "additionalProperties": false
+            },
+            "type": "json_schema",
+            "description": null,
+            "strict": true
+          },
+          "verbosity": "medium"
+        },
+        "tool_usage": {
+          "image_gen": {
+            "input_tokens": 0,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "output_tokens": 0,
+            "total_tokens": 0,
+            "cached_tokens": null,
+            "cached_tokens_details": null,
+            "output_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            }
+          },
+          "web_search": {
+            "num_requests": 0
+          }
+        },
+        "top_logprobs": 0,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 113,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens_details": {
+              "ttl_12h_tokens": 0,
+              "ttl_30m_tokens": 0
+            }
+          },
+          "output_tokens": 36,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 149
+        },
+        "user": null,
+        "billing": {
+          "payer": "openai"
+        },
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "store": true
+      },
+      "status": "parsed",
+      "output": {
+        "title": "Practice Python",
+        "steps": [
+          "Set a timer for 20 minutes",
+          "Open a Python coding environment",
+          "Practice Python coding for the set duration"
+        ],
+        "deadline": null
+      },
+      "deadline_pass": true,
+      "meaning_review_by": "Codex; qualitative review against saved labels",
+      "meaning_review": "Preserves labeled intent, constraints, and deadline; suggested actions may elaborate on notes."
+    },
+    {
+      "case": "duration",
+      "prompt": "B",
+      "notes": "Practice Python for 20 minutes.",
+      "expected": "20-minute practice; no invented recurring schedule or deadline",
+      "expected_deadline": null,
+      "schema_pass": true,
+      "meaning_pass": true,
+      "raw_response": {
+        "id": "resp_0faf6cf75eaa7442006afe4077b49c87d2aefceed5badcf8f7",
+        "access_programs": null,
+        "created_at": 1795047543.0,
+        "error": null,
+        "incomplete_details": null,
+        "instructions": null,
+        "metadata": {},
+        "model": "gpt-4.1-mini-2025-04-14",
+        "object": "response",
+        "output": [
+          {
+            "id": "msg_0faf6cf75eaa7442006afe40781c2c87d2a7adffbabc852350",
+            "content": [
+              {
+                "annotations": [],
+                "text": "{\"title\":\"Python Practice Session\",\"steps\":[\"Set a timer for 20 minutes.\",\"Practice Python programming during the session.\",\"Review key concepts covered after practice.\"],\"deadline\":null}",
+                "type": "output_text",
+                "logprobs": [],
+                "parsed": {
+                  "title": "Python Practice Session",
+                  "steps": [
+                    "Set a timer for 20 minutes.",
+                    "Practice Python programming during the session.",
+                    "Review key concepts covered after practice."
+                  ],
+                  "deadline": null
+                }
+              }
+            ],
+            "role": "assistant",
+            "status": "completed",
+            "type": "message",
+            "phase": null
+          }
+        ],
+        "parallel_tool_calls": true,
+        "temperature": 1.0,
+        "tool_choice": "auto",
+        "tools": [],
+        "top_p": 1.0,
+        "background": false,
+        "completed_at": 1795047544.0,
+        "conversation": null,
+        "image": {
+          "context_compression": "disabled"
+        },
+        "input_transformations": [],
+        "max_output_tokens": null,
+        "max_tool_calls": null,
+        "moderation": null,
+        "previous_response_id": null,
+        "prompt": null,
+        "prompt_cache_diagnostics": null,
+        "prompt_cache_key": null,
+        "prompt_cache_options": null,
+        "prompt_cache_retention": "in_memory",
+        "reasoning": {
+          "context": null,
+          "effort": null,
+          "generate_summary": null,
+          "mode": null,
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "status": "completed",
+        "text": {
+          "format": {
+            "name": "Brief",
+            "schema_": {
+              "properties": {
+                "title": {
+                  "title": "Title",
+                  "type": "string"
+                },
+                "steps": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "maxItems": 3,
+                  "minItems": 3,
+                  "title": "Steps",
+                  "type": "array"
+                },
+                "deadline": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "title": "Deadline"
+                }
+              },
+              "required": [
+                "title",
+                "steps",
+                "deadline"
+              ],
+              "title": "Brief",
+              "type": "object",
+              "additionalProperties": false
+            },
+            "type": "json_schema",
+            "description": null,
+            "strict": true
+          },
+          "verbosity": "medium"
+        },
+        "tool_usage": {
+          "image_gen": {
+            "input_tokens": 0,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "output_tokens": 0,
+            "total_tokens": 0,
+            "cached_tokens": null,
+            "cached_tokens_details": null,
+            "output_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            }
+          },
+          "web_search": {
+            "num_requests": 0
+          }
+        },
+        "top_logprobs": 0,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 137,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens_details": {
+              "ttl_12h_tokens": 0,
+              "ttl_30m_tokens": 0
+            }
+          },
+          "output_tokens": 37,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 174
+        },
+        "user": null,
+        "billing": {
+          "payer": "openai"
+        },
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "store": true
+      },
+      "status": "parsed",
+      "output": {
+        "title": "Python Practice Session",
+        "steps": [
+          "Set a timer for 20 minutes.",
+          "Practice Python programming during the session.",
+          "Review key concepts covered after practice."
+        ],
+        "deadline": null
+      },
+      "deadline_pass": true,
+      "meaning_review_by": "Codex; qualitative review against saved labels",
+      "meaning_review": "Preserves labeled intent, constraints, and deadline; suggested actions may elaborate on notes."
+    },
+    {
+      "case": "duplicate",
+      "prompt": "A",
+      "notes": "Study Python by Friday. Study Python by Friday.",
+      "expected": "One Python study task; Friday",
+      "expected_deadline": "Friday",
+      "schema_pass": true,
+      "meaning_pass": true,
+      "raw_response": {
+        "id": "resp_0600aeade33bf9b4006afe4078fba087d29cbebad9e1725285",
+        "access_programs": null,
+        "created_at": 1795047545.0,
+        "error": null,
+        "incomplete_details": null,
+        "instructions": null,
+        "metadata": {},
+        "model": "gpt-4.1-mini-2025-04-14",
+        "object": "response",
+        "output": [
+          {
+            "id": "msg_0600aeade33bf9b4006afe4079500887d28d4e09421497f3fe",
+            "content": [
+              {
+                "annotations": [],
+                "text": "{\"title\":\"Study Python\",\"steps\":[\"Organize study materials for Python\",\"Allocate daily time slots for Python study\",\"Review Python concepts and practice exercises\"],\"deadline\":\"Friday\"}",
+                "type": "output_text",
+                "logprobs": [],
+                "parsed": {
+                  "title": "Study Python",
+                  "steps": [
+                    "Organize study materials for Python",
+                    "Allocate daily time slots for Python study",
+                    "Review Python concepts and practice exercises"
+                  ],
+                  "deadline": "Friday"
+                }
+              }
+            ],
+            "role": "assistant",
+            "status": "completed",
+            "type": "message",
+            "phase": null
+          }
+        ],
+        "parallel_tool_calls": true,
+        "temperature": 1.0,
+        "tool_choice": "auto",
+        "tools": [],
+        "top_p": 1.0,
+        "background": false,
+        "completed_at": 1795047545.0,
+        "conversation": null,
+        "image": {
+          "context_compression": "disabled"
+        },
+        "input_transformations": [],
+        "max_output_tokens": null,
+        "max_tool_calls": null,
+        "moderation": null,
+        "previous_response_id": null,
+        "prompt": null,
+        "prompt_cache_diagnostics": null,
+        "prompt_cache_key": null,
+        "prompt_cache_options": null,
+        "prompt_cache_retention": "in_memory",
+        "reasoning": {
+          "context": null,
+          "effort": null,
+          "generate_summary": null,
+          "mode": null,
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "status": "completed",
+        "text": {
+          "format": {
+            "name": "Brief",
+            "schema_": {
+              "properties": {
+                "title": {
+                  "title": "Title",
+                  "type": "string"
+                },
+                "steps": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "maxItems": 3,
+                  "minItems": 3,
+                  "title": "Steps",
+                  "type": "array"
+                },
+                "deadline": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "title": "Deadline"
+                }
+              },
+              "required": [
+                "title",
+                "steps",
+                "deadline"
+              ],
+              "title": "Brief",
+              "type": "object",
+              "additionalProperties": false
+            },
+            "type": "json_schema",
+            "description": null,
+            "strict": true
+          },
+          "verbosity": "medium"
+        },
+        "tool_usage": {
+          "image_gen": {
+            "input_tokens": 0,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "output_tokens": 0,
+            "total_tokens": 0,
+            "cached_tokens": null,
+            "cached_tokens_details": null,
+            "output_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            }
+          },
+          "web_search": {
+            "num_requests": 0
+          }
+        },
+        "top_logprobs": 0,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 116,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens_details": {
+              "ttl_12h_tokens": 0,
+              "ttl_30m_tokens": 0
+            }
+          },
+          "output_tokens": 36,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 152
+        },
+        "user": null,
+        "billing": {
+          "payer": "openai"
+        },
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "store": true
+      },
+      "status": "parsed",
+      "output": {
+        "title": "Study Python",
+        "steps": [
+          "Organize study materials for Python",
+          "Allocate daily time slots for Python study",
+          "Review Python concepts and practice exercises"
+        ],
+        "deadline": "Friday"
+      },
+      "deadline_pass": true,
+      "meaning_review_by": "Codex; qualitative review against saved labels",
+      "meaning_review": "Preserves labeled intent, constraints, and deadline; suggested actions may elaborate on notes."
+    },
+    {
+      "case": "duplicate",
+      "prompt": "B",
+      "notes": "Study Python by Friday. Study Python by Friday.",
+      "expected": "One Python study task; Friday",
+      "expected_deadline": "Friday",
+      "schema_pass": true,
+      "meaning_pass": true,
+      "raw_response": {
+        "id": "resp_0e5c5c279a2380b3006afe407a0f1887d2a21518acbee18866",
+        "access_programs": null,
+        "created_at": 1795047546.0,
+        "error": null,
+        "incomplete_details": null,
+        "instructions": null,
+        "metadata": {},
+        "model": "gpt-4.1-mini-2025-04-14",
+        "object": "response",
+        "output": [
+          {
+            "id": "msg_0e5c5c279a2380b3006afe407a504887d29273e533820d4f1f",
+            "content": [
+              {
+                "annotations": [],
+                "text": "{\"title\":\"Study Python\",\"steps\":[\"Organize study materials and resources for Python.\",\"Set a daily study schedule to cover key Python concepts.\",\"Review and practice coding exercises to reinforce learning.\"],\"deadline\":\"Friday\"}",
+                "type": "output_text",
+                "logprobs": [],
+                "parsed": {
+                  "title": "Study Python",
+                  "steps": [
+                    "Organize study materials and resources for Python.",
+                    "Set a daily study schedule to cover key Python concepts.",
+                    "Review and practice coding exercises to reinforce learning."
+                  ],
+                  "deadline": "Friday"
+                }
+              }
+            ],
+            "role": "assistant",
+            "status": "completed",
+            "type": "message",
+            "phase": null
+          }
+        ],
+        "parallel_tool_calls": true,
+        "temperature": 1.0,
+        "tool_choice": "auto",
+        "tools": [],
+        "top_p": 1.0,
+        "background": false,
+        "completed_at": 1795047546.0,
+        "conversation": null,
+        "image": {
+          "context_compression": "disabled"
+        },
+        "input_transformations": [],
+        "max_output_tokens": null,
+        "max_tool_calls": null,
+        "moderation": null,
+        "previous_response_id": null,
+        "prompt": null,
+        "prompt_cache_diagnostics": null,
+        "prompt_cache_key": null,
+        "prompt_cache_options": null,
+        "prompt_cache_retention": "in_memory",
+        "reasoning": {
+          "context": null,
+          "effort": null,
+          "generate_summary": null,
+          "mode": null,
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "status": "completed",
+        "text": {
+          "format": {
+            "name": "Brief",
+            "schema_": {
+              "properties": {
+                "title": {
+                  "title": "Title",
+                  "type": "string"
+                },
+                "steps": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "maxItems": 3,
+                  "minItems": 3,
+                  "title": "Steps",
+                  "type": "array"
+                },
+                "deadline": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "title": "Deadline"
+                }
+              },
+              "required": [
+                "title",
+                "steps",
+                "deadline"
+              ],
+              "title": "Brief",
+              "type": "object",
+              "additionalProperties": false
+            },
+            "type": "json_schema",
+            "description": null,
+            "strict": true
+          },
+          "verbosity": "medium"
+        },
+        "tool_usage": {
+          "image_gen": {
+            "input_tokens": 0,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "output_tokens": 0,
+            "total_tokens": 0,
+            "cached_tokens": null,
+            "cached_tokens_details": null,
+            "output_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            }
+          },
+          "web_search": {
+            "num_requests": 0
+          }
+        },
+        "top_logprobs": 0,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 140,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens_details": {
+              "ttl_12h_tokens": 0,
+              "ttl_30m_tokens": 0
+            }
+          },
+          "output_tokens": 43,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 183
+        },
+        "user": null,
+        "billing": {
+          "payer": "openai"
+        },
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "store": true
+      },
+      "status": "parsed",
+      "output": {
+        "title": "Study Python",
+        "steps": [
+          "Organize study materials and resources for Python.",
+          "Set a daily study schedule to cover key Python concepts.",
+          "Review and practice coding exercises to reinforce learning."
+        ],
+        "deadline": "Friday"
+      },
+      "deadline_pass": true,
+      "meaning_review_by": "Codex; qualitative review against saved labels",
+      "meaning_review": "Preserves labeled intent, constraints, and deadline; suggested actions may elaborate on notes."
+    },
+    {
+      "case": "restriction",
+      "prompt": "A",
+      "notes": "Learn Python by Friday. Don't suggest watching videos.",
+      "expected": "Python learning; no videos; Friday",
+      "expected_deadline": "Friday",
+      "schema_pass": true,
+      "meaning_pass": true,
+      "raw_response": {
+        "id": "resp_0f0c175e6d6e7ea4006afe407b23c087d287a124377a9389ff",
+        "access_programs": null,
+        "created_at": 1795047547.0,
+        "error": null,
+        "incomplete_details": null,
+        "instructions": null,
+        "metadata": {},
+        "model": "gpt-4.1-mini-2025-04-14",
+        "object": "response",
+        "output": [
+          {
+            "id": "msg_0f0c175e6d6e7ea4006afe407b817887d283a027d8da104494",
+            "content": [
+              {
+                "annotations": [],
+                "text": "{\"title\":\"Learn Python\",\"steps\":[\"Read a Python tutorial book or written guide\",\"Practice coding exercises in Python\",\"Build a small project or script to apply what you've learned\"],\"deadline\":\"Friday\"}",
+                "type": "output_text",
+                "logprobs": [],
+                "parsed": {
+                  "title": "Learn Python",
+                  "steps": [
+                    "Read a Python tutorial book or written guide",
+                    "Practice coding exercises in Python",
+                    "Build a small project or script to apply what you've learned"
+                  ],
+                  "deadline": "Friday"
+                }
+              }
+            ],
+            "role": "assistant",
+            "status": "completed",
+            "type": "message",
+            "phase": null
+          }
+        ],
+        "parallel_tool_calls": true,
+        "temperature": 1.0,
+        "tool_choice": "auto",
+        "tools": [],
+        "top_p": 1.0,
+        "background": false,
+        "completed_at": 1795047547.0,
+        "conversation": null,
+        "image": {
+          "context_compression": "disabled"
+        },
+        "input_transformations": [],
+        "max_output_tokens": null,
+        "max_tool_calls": null,
+        "moderation": null,
+        "previous_response_id": null,
+        "prompt": null,
+        "prompt_cache_diagnostics": null,
+        "prompt_cache_key": null,
+        "prompt_cache_options": null,
+        "prompt_cache_retention": "in_memory",
+        "reasoning": {
+          "context": null,
+          "effort": null,
+          "generate_summary": null,
+          "mode": null,
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "status": "completed",
+        "text": {
+          "format": {
+            "name": "Brief",
+            "schema_": {
+              "properties": {
+                "title": {
+                  "title": "Title",
+                  "type": "string"
+                },
+                "steps": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "maxItems": 3,
+                  "minItems": 3,
+                  "title": "Steps",
+                  "type": "array"
+                },
+                "deadline": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "title": "Deadline"
+                }
+              },
+              "required": [
+                "title",
+                "steps",
+                "deadline"
+              ],
+              "title": "Brief",
+              "type": "object",
+              "additionalProperties": false
+            },
+            "type": "json_schema",
+            "description": null,
+            "strict": true
+          },
+          "verbosity": "medium"
+        },
+        "tool_usage": {
+          "image_gen": {
+            "input_tokens": 0,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "output_tokens": 0,
+            "total_tokens": 0,
+            "cached_tokens": null,
+            "cached_tokens_details": null,
+            "output_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            }
+          },
+          "web_search": {
+            "num_requests": 0
+          }
+        },
+        "top_logprobs": 0,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 116,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens_details": {
+              "ttl_12h_tokens": 0,
+              "ttl_30m_tokens": 0
+            }
+          },
+          "output_tokens": 41,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 157
+        },
+        "user": null,
+        "billing": {
+          "payer": "openai"
+        },
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "store": true
+      },
+      "status": "parsed",
+      "output": {
+        "title": "Learn Python",
+        "steps": [
+          "Read a Python tutorial book or written guide",
+          "Practice coding exercises in Python",
+          "Build a small project or script to apply what you've learned"
+        ],
+        "deadline": "Friday"
+      },
+      "deadline_pass": true,
+      "meaning_review_by": "Codex; qualitative review against saved labels",
+      "meaning_review": "Preserves labeled intent, constraints, and deadline; suggested actions may elaborate on notes."
+    },
+    {
+      "case": "restriction",
+      "prompt": "B",
+      "notes": "Learn Python by Friday. Don't suggest watching videos.",
+      "expected": "Python learning; no videos; Friday",
+      "expected_deadline": "Friday",
+      "schema_pass": true,
+      "meaning_pass": true,
+      "raw_response": {
+        "id": "resp_0a9c378317bdcb3c006afe407c74a887d28f42375c0f895a97",
+        "access_programs": null,
+        "created_at": 1795047548.0,
+        "error": null,
+        "incomplete_details": null,
+        "instructions": null,
+        "metadata": {},
+        "model": "gpt-4.1-mini-2025-04-14",
+        "object": "response",
+        "output": [
+          {
+            "id": "msg_0a9c378317bdcb3c006afe407d0bc487d2a923be99f1348dea",
+            "content": [
+              {
+                "annotations": [],
+                "text": "{\"title\":\"Learn Python Quickly\",\"steps\":[\"Practice Python coding exercises daily\",\"Read Python programming books or tutorials\",\"Write small Python projects to apply learning\"],\"deadline\":\"Friday\"}",
+                "type": "output_text",
+                "logprobs": [],
+                "parsed": {
+                  "title": "Learn Python Quickly",
+                  "steps": [
+                    "Practice Python coding exercises daily",
+                    "Read Python programming books or tutorials",
+                    "Write small Python projects to apply learning"
+                  ],
+                  "deadline": "Friday"
+                }
+              }
+            ],
+            "role": "assistant",
+            "status": "completed",
+            "type": "message",
+            "phase": null
+          }
+        ],
+        "parallel_tool_calls": true,
+        "temperature": 1.0,
+        "tool_choice": "auto",
+        "tools": [],
+        "top_p": 1.0,
+        "background": false,
+        "completed_at": 1795047549.0,
+        "conversation": null,
+        "image": {
+          "context_compression": "disabled"
+        },
+        "input_transformations": [],
+        "max_output_tokens": null,
+        "max_tool_calls": null,
+        "moderation": null,
+        "previous_response_id": null,
+        "prompt": null,
+        "prompt_cache_diagnostics": null,
+        "prompt_cache_key": null,
+        "prompt_cache_options": null,
+        "prompt_cache_retention": "in_memory",
+        "reasoning": {
+          "context": null,
+          "effort": null,
+          "generate_summary": null,
+          "mode": null,
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "status": "completed",
+        "text": {
+          "format": {
+            "name": "Brief",
+            "schema_": {
+              "properties": {
+                "title": {
+                  "title": "Title",
+                  "type": "string"
+                },
+                "steps": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "maxItems": 3,
+                  "minItems": 3,
+                  "title": "Steps",
+                  "type": "array"
+                },
+                "deadline": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "title": "Deadline"
+                }
+              },
+              "required": [
+                "title",
+                "steps",
+                "deadline"
+              ],
+              "title": "Brief",
+              "type": "object",
+              "additionalProperties": false
+            },
+            "type": "json_schema",
+            "description": null,
+            "strict": true
+          },
+          "verbosity": "medium"
+        },
+        "tool_usage": {
+          "image_gen": {
+            "input_tokens": 0,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "output_tokens": 0,
+            "total_tokens": 0,
+            "cached_tokens": null,
+            "cached_tokens_details": null,
+            "output_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            }
+          },
+          "web_search": {
+            "num_requests": 0
+          }
+        },
+        "top_logprobs": 0,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 140,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens_details": {
+              "ttl_12h_tokens": 0,
+              "ttl_30m_tokens": 0
+            }
+          },
+          "output_tokens": 36,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 176
+        },
+        "user": null,
+        "billing": {
+          "payer": "openai"
+        },
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "store": true
+      },
+      "status": "parsed",
+      "output": {
+        "title": "Learn Python Quickly",
+        "steps": [
+          "Practice Python coding exercises daily",
+          "Read Python programming books or tutorials",
+          "Write small Python projects to apply learning"
+        ],
+        "deadline": "Friday"
+      },
+      "deadline_pass": true,
+      "meaning_review_by": "Codex; qualitative review against saved labels",
+      "meaning_review": "Preserves labeled intent, constraints, and deadline; suggested actions may elaborate on notes."
+    }
+  ],
+  "summary": {
+    "A": {
+      "schema_passes": 9,
+      "model_cases": 9,
+      "meaning_passes": 9,
+      "blank_guard_passes": 1
+    },
+    "B": {
+      "schema_passes": 9,
+      "model_cases": 9,
+      "meaning_passes": 7,
+      "blank_guard_passes": 1
+    }
+  }
+}

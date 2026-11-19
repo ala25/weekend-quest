@@ -1,0 +1,7 @@
+How many minutes do you have? Explore a hidden garden
+Return only JSON with "title", "steps" (exactly three items), and "deadline" (null if none is mentioned). Use these notes: Practice Python for 20 minutes.
+Practice Python
+Set a timer for 20 minutes
+Find Python practice exercises
+Complete exercises within the time limit
+None

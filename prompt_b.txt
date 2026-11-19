@@ -1,0 +1,11 @@
+How many minutes do you have? Explore a hidden garden
+Turn the notes into a brief with a title, exactly three suggested steps, and a deadline.
+Preserve the user's intent and restrictions.
+Follow corrections and do not repeat completed tasks.
+Use null for the deadline when none is stated. A duration is not a deadline.
+Notes: Learn Python by Friday. Don't suggest watching videos.
+Learn Python
+Read Python tutorials and documentation.
+Practice coding exercises in Python daily.
+Work on small Python projects to apply concepts learned.
+Friday
