@@ -1,0 +1,7 @@
+How many minutes do you have? Explore a hidden garden
+Return only JSON with "title", "steps" (exactly three items), and "deadline" (null if none is mentioned). Use these notes: Learn Python by Friday. Don't suggest watching videos.
+Learn Python
+Complete the official Python tutorial on the Python website
+Practice coding challenges on platforms like LeetCode or HackerRank
+Build a small Python project such as a calculator or a to-do list app
+Friday
